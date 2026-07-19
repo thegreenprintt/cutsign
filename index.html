@@ -54,7 +54,6 @@ header.solid{background:rgba(242,239,231,.92);backdrop-filter:blur(14px);color:v
 .hero .shopnow:hover{background:#fff;color:var(--ink)}
 .hero .scroll{font-size:11px;letter-spacing:.25em;opacity:.8;writing-mode:vertical-rl;position:absolute;right:40px;bottom:56px;z-index:2;color:#fff}
 
-/* trust bar */
 .trust{background:var(--ink);color:var(--bone)}
 .trin{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;padding:16px 0;font-family:var(--disp);letter-spacing:2px;font-size:13px;text-align:center}
 .trin span{flex:1;min-width:180px;opacity:.9}.trin .r{color:var(--red)}
@@ -137,7 +136,6 @@ footer a{display:block;color:#b7b4ab;font-size:13px;margin-bottom:10px}footer a:
 .viz{flex:1;display:flex;align-items:flex-end;gap:2px;height:24px;overflow:hidden}.viz i{flex:1;background:linear-gradient(180deg,#c9a227,var(--red));border-radius:1px;height:8%}
 .mvol{display:flex;align-items:center;gap:8px}.mvol input{width:70px;accent-color:var(--red)}
 
-/* drawers */
 .ov{position:fixed;inset:0;z-index:970;background:rgba(11,11,11,.5);opacity:0;pointer-events:none;transition:.3s}.ov.open{opacity:1;pointer-events:auto}
 .drawer{position:fixed;top:0;right:0;height:100%;width:430px;max-width:94vw;z-index:980;background:var(--bone);border-left:1px solid var(--ink);transform:translateX(100%);transition:transform .34s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column}
 .drawer.open{transform:translateX(0)}
@@ -164,7 +162,6 @@ footer a{display:block;color:#b7b4ab;font-size:13px;margin-bottom:10px}footer a:
 .wmove{background:var(--ink);color:var(--bone);border:none;font-family:var(--disp);letter-spacing:1px;font-size:11px;padding:8px 12px;cursor:pointer;margin-top:7px}.wmove:hover{background:var(--red)}
 .dnote{text-align:center;color:var(--muted);font-size:11px;margin-top:12px;letter-spacing:.1em}
 
-/* QUICK VIEW modal */
 .modal{position:fixed;inset:0;z-index:995;display:grid;place-items:center;padding:24px;opacity:0;pointer-events:none;transition:.25s}
 .modal.open{opacity:1;pointer-events:auto}
 .modal .mbg{position:absolute;inset:0;background:rgba(11,11,11,.6)}
@@ -191,7 +188,6 @@ footer a{display:block;color:#b7b4ab;font-size:13px;margin-bottom:10px}footer a:
 .madd{flex:1;font-family:var(--disp);letter-spacing:2px;font-size:15px;background:var(--ink);color:var(--bone);border:none;cursor:pointer;transition:.2s}.madd:hover{background:var(--red)}
 .mnote{color:var(--muted);font-size:11px;letter-spacing:.05em;margin-top:16px;display:flex;gap:16px;flex-wrap:wrap}
 
-/* size guide + promo */
 .sgv{position:fixed;inset:0;z-index:998;display:grid;place-items:center;opacity:0;pointer-events:none;transition:.25s;padding:20px}
 .sgv.open{opacity:1;pointer-events:auto}
 .sgv .mbg{position:absolute;inset:0;background:rgba(11,11,11,.6)}
@@ -275,7 +271,6 @@ body{padding-bottom:62px}
 .state .cayoa{margin-top:26px;font-family:var(--disp);font-size:clamp(22px,3.4vw,46px);letter-spacing:-.5px;line-height:1.02}
 .state .cayoa span{color:var(--red);display:block}
 
-/* ===== mobile hardening ===== */
 html,body{max-width:100vw;overflow-x:hidden}
 .burger span{transition:transform .3s,opacity .2s}
 .burger.x span:nth-child(1){transform:translateY(7px) rotate(45deg)}
@@ -288,7 +283,7 @@ html,body{max-width:100vw;overflow-x:hidden}
   .burger{display:flex}
 }
 @media(hover:none){
-  .pcard .qv{transform:translateY(0);opacity:1}   /* touch: always show quick view */
+  .pcard .qv{transform:translateY(0);opacity:1}   
   .cur{display:none}
 }
 @media(max-width:600px){
@@ -306,6 +301,8 @@ html,body{max-width:100vw;overflow-x:hidden}
   .madd{font-size:13px}
   .mnote{font-size:10px;gap:10px}
 }
+.hero .bg{filter:grayscale(1) contrast(1.06) brightness(.96)}
+.look .pic{filter:grayscale(1) contrast(1.06) brightness(.96)}
 </style>
 </head>
 <body>
@@ -406,12 +403,12 @@ html,body{max-width:100vw;overflow-x:hidden}
 <footer><div class="wrap">
   <div class="fgrid">
     <div><div class="fbrand">wontchan<span class="g">g</span>e.</div>
-      <div class="hits"><span><span class="on-dot"></span> 14 online now</span><span>visitors <span class="box">0013370</span></span></div></div>
+      <p style="color:#8b8779;font-size:13px;line-height:1.6;margin-top:16px;max-width:300px">Independent label since 2025. Limited runs, shipped worldwide. Once it's gone, it's gone.</p></div>
     <div><h5>SHOP</h5><a href="#coll">New Arrivals</a><a href="#coll">Accessories</a><a href="#coll">Vetements</a><a href="#coll">AW25</a><a href="#coll">Never Restocking :)</a></div>
     <div><h5>HELP</h5><a href="#">Shipping</a><a href="#">Returns</a><a href="#">Size Guide</a><a href="#">Contact</a></div>
     <div><h5>SOCIAL</h5><a href="#">Instagram</a><a href="#">TikTok</a><a href="#">Discord</a><a href="#">Pinterest</a></div>
   </div>
-  <div class="fbot">&copy; 2026 WONTCHANGE. — A PLACE FOR CLOTHES // mockup, not the live store</div>
+  <div class="fbot">&copy; 2026 WONTCHANGE. ALL RIGHTS RESERVED.</div>
 </div></footer>
 
 <div class="music">
@@ -422,18 +419,16 @@ html,body{max-width:100vw;overflow-x:hidden}
 </div>
 <audio id="audio" loop crossorigin="anonymous"><source src="malice-mizer.mp3" type="audio/mpeg"></audio>
 
-<!-- CART -->
 <div class="ov" id="ov-cart" onclick="closeCart()"></div>
 <aside class="drawer" id="cart">
   <div class="dhead"><h3>CART</h3><button class="dclose" onclick="closeCart()">&times;</button></div>
   <div class="shipbar" id="shipbar"></div>
   <div class="ditems" id="ditems"></div>
   <div class="dfoot"><div class="dtot"><span>TOTAL</span><span id="total">$0.00</span></div>
-    <button class="checkout" onclick="showToast('checkout is a mockup')">CHECKOUT &rarr;</button>
+    <button class="checkout" onclick="showToast('Redirecting to secure checkout…')">CHECKOUT &rarr;</button>
     <div class="dnote">SHIPPING &amp; TAXES CALCULATED AT CHECKOUT</div></div>
 </aside>
 
-<!-- WISHLIST -->
 <div class="ov" id="ov-wish" onclick="closeWish()"></div>
 <aside class="drawer" id="wish">
   <div class="dhead"><h3>SAVED</h3><button class="dclose" onclick="closeWish()">&times;</button></div>
@@ -441,7 +436,6 @@ html,body{max-width:100vw;overflow-x:hidden}
   <div class="dfoot"><div class="dnote">YOUR SAVED PIECES — MOVE THEM TO CART BEFORE THEY'RE GONE</div></div>
 </aside>
 
-<!-- QUICK VIEW -->
 <div class="modal" id="modal"><div class="mbg" onclick="closeQV()"></div>
   <div class="mcard"><button class="mclose" onclick="closeQV()">&times;</button>
     <div class="mpic" id="qv-pic"></div>
@@ -449,7 +443,6 @@ html,body{max-width:100vw;overflow-x:hidden}
   </div>
 </div>
 
-<!-- SIZE GUIDE -->
 <div class="sgv" id="sgv"><div class="mbg" onclick="closeSG()"></div>
   <div class="sgcard"><button class="mclose" onclick="closeSG()" style="position:absolute;top:10px;right:14px">&times;</button>
     <h3>SIZE GUIDE</h3>
@@ -461,7 +454,6 @@ html,body{max-width:100vw;overflow-x:hidden}
   </div>
 </div>
 
-<!-- PROMO -->
 <div class="promo" id="promo"><div class="mbg" onclick="closePromo()"></div>
   <div class="promocard"><button class="promoclose" onclick="closePromo()">&times;</button>
     <div class="k">FIRST TIME HERE?</div>
@@ -490,11 +482,9 @@ addEventListener('scroll',()=>document.getElementById('head').classList.toggle('
 const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}}),{threshold:.14});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-/* stars helper */
 const stars=r=>{let f=Math.round(r);return '★★★★★'.slice(0,f)+'☆☆☆☆☆'.slice(0,5-f);};
 const money=p=>(p.from?'FROM ':'')+'$'+p.price.toFixed(2);
 
-/* filters */
 const fbar=document.getElementById('filters');
 CATS.forEach(c=>{const b=document.createElement('button');b.className='chip'+(c==='All'?' on':'');b.textContent=c;
   b.onclick=()=>{active=c;document.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));b.classList.add('on');render();};fbar.appendChild(b);});
@@ -536,7 +526,6 @@ grid.addEventListener('click',e=>{
   if(q){const id=q.dataset.qv||q.dataset.id;openQV(+id);}
 });
 
-/* WISHLIST */
 function toggleWish(id){wish.has(id)?wish.delete(id):wish.add(id);document.getElementById('wbadge').textContent=wish.size;
   document.querySelectorAll(`.heart[data-w="${id}"]`).forEach(h=>{h.classList.toggle('on',wish.has(id));h.textContent=wish.has(id)?'♥':'♡';});
   drawWish();showToast(wish.has(id)?'saved to wishlist':'removed');}
@@ -547,7 +536,6 @@ function drawWish(){const box=document.getElementById('witems');const arr=[...wi
 function openWish(){document.getElementById('wish').classList.add('open');document.getElementById('ov-wish').classList.add('open');}
 function closeWish(){document.getElementById('wish').classList.remove('open');document.getElementById('ov-wish').classList.remove('open');}
 
-/* QUICK VIEW */
 let qvId=null,qvSize=null,qvQty=1;
 function openQV(id){const p=P.find(x=>x.id===id);qvId=id;qvSize=p.sizes.length===1?p.sizes[0]:null;qvQty=1;
   document.getElementById('qv-pic').innerHTML=`${p.badge?`<span class="badge ${p.badge==='LAST CHANCE'?'last':(p.badge==='NEW'?'new':'')}">${p.badge}</span>`:''}<img src="${p.img}">`;
@@ -573,7 +561,6 @@ function qvStep(d){qvQty=Math.max(1,qvQty+d);document.getElementById('qv-q').tex
 function qvAdd(){const p=P.find(x=>x.id===qvId);if(!qvSize){showToast('please select a size');return;}
   addToCart(p,qvSize,qvQty);closeQV();openCart();}
 
-/* CART */
 function quickAdd(id){const p=P.find(x=>x.id===id);addToCart(p,p.sizes[0],1);openCart();}
 function addToCart(p,size,qty){const key=p.id+'-'+size;const l=cart.find(x=>x.key===key);
   if(l)l.qty+=qty;else cart.push({key,id:p.id,name:p.name,price:p.price,img:p.img,size,qty});drawCart();showToast('added to cart');}
@@ -604,7 +591,6 @@ function closePromo(){document.getElementById('promo').classList.remove('open');
 function toggleMenu(){document.getElementById('mmenu').classList.toggle('open');var b=document.querySelector('.burger');if(b)b.classList.toggle('x');}
 let tT;function showToast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');clearTimeout(tT);tT=setTimeout(()=>t.classList.remove('show'),1600);}
 
-/* AUDIO */
 let actx,master,analyser,freq,playing=false,built=false;
 const mplay=document.getElementById('mplay'),vizEl=document.getElementById('viz'),audio=document.getElementById('audio');
 for(let i=0;i<44;i++)vizEl.appendChild(document.createElement('i'));const bars=[...vizEl.children];
