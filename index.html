@@ -211,7 +211,6 @@ footer a{display:block;color:#b7b4ab;font-size:13px;margin-bottom:10px}footer a:
 .promoclose{position:absolute;top:10px;right:14px;background:none;border:none;font-size:24px;cursor:pointer}
 
 .toast{position:fixed;left:50%;bottom:76px;transform:translate(-50%,20px);z-index:9500;background:var(--ink);color:var(--bone);font-family:var(--disp);letter-spacing:1px;font-size:14px;padding:12px 22px;opacity:0;pointer-events:none;transition:.3s}.toast.show{opacity:1;transform:translate(-50%,0)}
-body{padding-bottom:62px}
 .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;color:inherit}
 .burger span{width:24px;height:2px;background:currentColor;display:block}
 .mmenu{position:fixed;inset:0;z-index:940;background:var(--ink);color:var(--bone);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;transform:translateY(-100%);opacity:0;transition:transform .4s cubic-bezier(.4,0,.2,1),opacity .3s}
@@ -311,7 +310,7 @@ html,body{max-width:100vw;overflow-x:hidden}
 <div id="enter">
   <div class="em">wontchan<span class="g">g</span>e.</div>
   <div class="ln"><i></i></div><div class="go">ENTER</div>
-  <small>SOUND ON — AUTUMN / WINTER 2025</small>
+  <small>AUTUMN / WINTER 2025</small>
 </div>
 
 <header id="head"><div class="wrap hbar">
@@ -411,13 +410,7 @@ html,body{max-width:100vw;overflow-x:hidden}
   <div class="fbot">&copy; 2026 WONTCHANGE. ALL RIGHTS RESERVED.</div>
 </div></footer>
 
-<div class="music">
-  <button class="mplay" id="mplay" onclick="toggleMusic()"><span class="t"></span></button>
-  <div class="minfo"><b>WONTCHANGE FM</b><span id="mtrack">ambient — theme</span></div>
-  <div class="viz" id="viz"></div>
-  <div class="mvol">&#128266;<input type="range" min="0" max="100" value="55" id="vol"></div>
-</div>
-<audio id="audio" loop crossorigin="anonymous"><source src="malice-mizer.mp3" type="audio/mpeg"></audio>
+
 
 <div class="ov" id="ov-cart" onclick="closeCart()"></div>
 <aside class="drawer" id="cart">
@@ -591,26 +584,8 @@ function closePromo(){document.getElementById('promo').classList.remove('open');
 function toggleMenu(){document.getElementById('mmenu').classList.toggle('open');var b=document.querySelector('.burger');if(b)b.classList.toggle('x');}
 let tT;function showToast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');clearTimeout(tT);tT=setTimeout(()=>t.classList.remove('show'),1600);}
 
-let actx,master,analyser,freq,playing=false,built=false;
-const mplay=document.getElementById('mplay'),vizEl=document.getElementById('viz'),audio=document.getElementById('audio');
-for(let i=0;i<44;i++)vizEl.appendChild(document.createElement('i'));const bars=[...vizEl.children];
-(function loop(){if(analyser&&playing){analyser.getByteFrequencyData(freq);const s=Math.max(1,Math.floor(freq.length/bars.length));
-  bars.forEach((b,i)=>b.style.height=(6+(freq[i*s]/255)*94)+'%');}else bars.forEach(b=>b.style.height=(playing?6+Math.random()*80:7)+'%');requestAnimationFrame(loop);})();
-function build(){if(built)return;built=true;actx=new (window.AudioContext||window.webkitAudioContext)();master=actx.createGain();master.gain.value=0;
-  analyser=actx.createAnalyser();analyser.fftSize=128;freq=new Uint8Array(analyser.frequencyBinCount);
-  const filt=actx.createBiquadFilter();filt.type='lowpass';filt.frequency.value=1200;filt.Q.value=.6;filt.connect(master);master.connect(analyser);analyser.connect(actx.destination);
-  [110,164.81,220,261.63,329.63].forEach((f,i)=>{const o=actx.createOscillator();o.type=i===0?'sine':'sawtooth';o.frequency.value=f;
-    const g=actx.createGain();g.gain.value=i===0?.22:.07;o.connect(g);g.connect(filt);o.start();
-    const lfo=actx.createOscillator();lfo.frequency.value=.06+i*.017;const la=actx.createGain();la.gain.value=3;lfo.connect(la);la.connect(o.detune);lfo.start();});
-  const sw=actx.createOscillator();sw.frequency.value=.045;const sg=actx.createGain();sg.gain.value=250;sw.connect(sg);sg.connect(filt.frequency);sw.start();}
-function volLvl(){return document.getElementById('vol').value/100*0.55;}
-function setG(){if(master)master.gain.setTargetAtTime(playing?volLvl():0,actx.currentTime,.5);}
-function playM(){build();if(actx.state==='suspended')actx.resume();playing=true;mplay.classList.add('on');document.getElementById('mtrack').textContent='▶ ambient theme';setG();}
-function pauseM(){playing=false;mplay.classList.remove('on');document.getElementById('mtrack').textContent='paused';setG();}
-function toggleMusic(){playing?pauseM():playM();}
-document.getElementById('vol').oninput=()=>{if(playing)setG();if(audio)audio.volume=document.getElementById('vol').value/100;};
 const enter=document.getElementById('enter');
-enter.addEventListener('click',()=>{enter.classList.add('gone');playM();setTimeout(()=>enter.style.display='none',850);
+enter.addEventListener('click',()=>{enter.classList.add('gone');setTimeout(()=>enter.style.display='none',850);
   setTimeout(()=>document.getElementById('promo').classList.add('open'),2600);});
 </script>
 </body>
